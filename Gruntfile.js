@@ -21,14 +21,19 @@ module.exports = function(grunt) {
                     ]
                 },
                 files: {
-                    "wwwroot/styles/main.css": "<%= settings.assets %>/less/main.less"
+                    "<%= settings.dist %>/styles/main.css": "<%= settings.assets %>/less/main.less"
                 }
             },
         },
         copy: {
             fonts: {
                 files: [
-                    {expand: true, cwd: '<%= settings.assets %>/fonts/', src: ['**'], dest: '<%= settings.dist %>/fonts/'},
+                    {
+                        expand: true,
+                        cwd: '<%= settings.assets %>/fonts/',
+                        src: ['**'],
+                        dest: '<%= settings.dist %>/fonts/'
+                    },
                 ],
             },
         },
